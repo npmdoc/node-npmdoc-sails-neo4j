@@ -1,0 +1,670 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a>sails-neo4j (v0.3.0)</a>
+</h1>
+<h4>Neo4j adapter for Sails.js</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sails-neo4j">module sails-neo4j</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">sails-neo4j.</span>syncable</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-neo4j.create">
+            function <span class="apidocSignatureSpan">sails-neo4j.</span>create
+            <span class="apidocSignatureSpan">(connection, collection, params, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-neo4j.createConnection">
+            function <span class="apidocSignatureSpan">sails-neo4j.</span>createConnection
+            <span class="apidocSignatureSpan">(connection)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-neo4j.createMany">
+            function <span class="apidocSignatureSpan">sails-neo4j.</span>createMany
+            <span class="apidocSignatureSpan">(connection, collection, params, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-neo4j.destroy">
+            function <span class="apidocSignatureSpan">sails-neo4j.</span>destroy
+            <span class="apidocSignatureSpan">(connection, collection, params, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-neo4j.find">
+            function <span class="apidocSignatureSpan">sails-neo4j.</span>find
+            <span class="apidocSignatureSpan">(connection, collection, params, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-neo4j.getConnection">
+            function <span class="apidocSignatureSpan">sails-neo4j.</span>getConnection
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-neo4j.link">
+            function <span class="apidocSignatureSpan">sails-neo4j.</span>link
+            <span class="apidocSignatureSpan">(connection, collection, predecessorParams, successorCollectionName, successorParams, relationshipType, relationshipParams , cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-neo4j.query">
+            function <span class="apidocSignatureSpan">sails-neo4j.</span>query
+            <span class="apidocSignatureSpan">(connection, collection, q, params, cb, unique)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-neo4j.registerConnection">
+            function <span class="apidocSignatureSpan">sails-neo4j.</span>registerConnection
+            <span class="apidocSignatureSpan">(connection, collection, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-neo4j.sanitized">
+            function <span class="apidocSignatureSpan">sails-neo4j.</span>sanitized
+            <span class="apidocSignatureSpan">(connection, collection, params)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-neo4j.stream">
+            function <span class="apidocSignatureSpan">sails-neo4j.</span>stream
+            <span class="apidocSignatureSpan">(connection, collection, options, stream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-neo4j.update">
+            function <span class="apidocSignatureSpan">sails-neo4j.</span>update
+            <span class="apidocSignatureSpan">(connection, collection, params, values, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sails-neo4j.</span>connection</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sails-neo4j.</span>defaults</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sails-neo4j.</span>security</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sails-neo4j.connection">module sails-neo4j.connection</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-neo4j.connection.connect">
+            function <span class="apidocSignatureSpan">sails-neo4j.connection.</span>connect
+            <span class="apidocSignatureSpan">(connection)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-neo4j.connection.graph">
+            function <span class="apidocSignatureSpan">sails-neo4j.connection.</span>graph
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sails-neo4j.security">module sails-neo4j.security</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sails-neo4j.security.sanitized">
+            function <span class="apidocSignatureSpan">sails-neo4j.security.</span>sanitized
+            <span class="apidocSignatureSpan">(connection, collection, params)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sails-neo4j" id="apidoc.module.sails-neo4j">module sails-neo4j</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-neo4j.create" id="apidoc.element.sails-neo4j.create">
+        function <span class="apidocSignatureSpan">sails-neo4j.</span>create
+        <span class="apidocSignatureSpan">(connection, collection, params, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (connection, collection, params, cb) {
+
+  var q, delimiter = '';
+
+  if (collection === null) { collection = ''; } // do we have a label?
+  else { collection = ':' + collection; }
+
+  if (params !== null &amp;&amp; collection !== null) { delimiter = ' AND '; } // do we have a label and params?
+
+  q = [
+    'CREATE (n' + collection + ' { ' + parseOne(params) + ' })',
+    'RETURN n'
+  ];
+
+  query(connection, collection, q, params, cb, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-neo4j.createConnection" id="apidoc.element.sails-neo4j.createConnection">
+        function <span class="apidocSignatureSpan">sails-neo4j.</span>createConnection
+        <span class="apidocSignatureSpan">(connection)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createConnection(connection) {
+    connection = connection || {};
+    connectionSettings = {};
+    _.merge(connectionSettings, defaults, connection);
+    neo.connect(connectionSettings);
+    return neo;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-neo4j.createMany" id="apidoc.element.sails-neo4j.createMany">
+        function <span class="apidocSignatureSpan">sails-neo4j.</span>createMany
+        <span class="apidocSignatureSpan">(connection, collection, params, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createMany = function (connection, collection, params, cb) {
+
+  var q, delimiter = '';
+
+  if (collection === null) { collection = ''; } // do we have a label?
+  else { collection = ':' + collection; }
+
+  if (params &amp;&amp; collection) { delimiter = ' AND '; } // do we have a label and params?
+
+  q = [
+    'CREATE (n' + collection + ' { ' + parseMany(params) + ' })',
+    'RETURN n'
+  ];
+
+  query(connection, collection, q, params, cb, false);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-neo4j.destroy" id="apidoc.element.sails-neo4j.destroy">
+        function <span class="apidocSignatureSpan">sails-neo4j.</span>destroy
+        <span class="apidocSignatureSpan">(connection, collection, params, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">destroy = function (connection, collection, params, cb) {
+  var q, delimiter = '';
+
+  if (collection === null) { collection = ''; } // do we have a label?
+  else { collection = 'n:' + collection; }
+
+  if (params.where &amp;&amp; collection) { delimiter = ' AND '; } // do we have a label and params?
+  q = [
+    'MATCH (n)',
+    'WHERE ' + collection + delimiter + toWhere('n', params),
+    'DELETE n'
+  ];
+  query(connection, collection, q, params.where, cb, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-neo4j.find" id="apidoc.element.sails-neo4j.find">
+        function <span class="apidocSignatureSpan">sails-neo4j.</span>find
+        <span class="apidocSignatureSpan">(connection, collection, params, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">find = function (connection, collection, params, cb) {
+
+  var q, delimiter = '';
+
+  if (collection === null) { collection = ''; } // do we have a label?
+  else { collection = 'n:' + collection; }
+
+  if (params.where &amp;&amp; collection) { delimiter = ' AND '; } // do we have a label and params?
+  q = [
+    'MATCH (n)',
+    'WHERE ' + collection + delimiter + toWhere('n', params),
+    'RETURN n'
+  ];
+
+  query(connection, collection, q, params.where, cb, false);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-neo4j.getConnection" id="apidoc.element.sails-neo4j.getConnection">
+        function <span class="apidocSignatureSpan">sails-neo4j.</span>getConnection
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getConnection() {
+  return neo.connect(defaults);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-neo4j.link" id="apidoc.element.sails-neo4j.link">
+        function <span class="apidocSignatureSpan">sails-neo4j.</span>link
+        <span class="apidocSignatureSpan">(connection, collection, predecessorParams, successorCollectionName, successorParams, relationshipType, relationshipParams , cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">link = function (connection, collection, predecessorParams, successorCollectionName, successorParams, relationshipType, relationshipParams , cb) {
+  var q, predecessorDelimiter = '', successorDelimiter = '', predecessorNamespace = 'pred', successorNamespace = 'succ';
+
+  if (collection === null) { collection = ''; } // do we have a label?
+  else { collection = 'a:' + collection; }
+  if (predecessorParams &amp;&amp; collection) { predecessorDelimiter = ' AND '; }
+
+  if (successorCollectionName === null) { successorCollectionName = ''; } // do we have a label?
+  else { successorCollectionName = 'b:' + successorCollectionName; }
+  if (successorParams &amp;&amp; collection) { successorDelimiter = ' AND '; }
+
+  relationshipParams = _.isEmpty(relationshipParams) ? '' : ' ' + JSON.stringify(relationshipParams);
+
+  q = [
+    'MATCH (a),(b)',
+    'WHERE ' + collection + predecessorDelimiter + toWhere('a', {where: predecessorParams}, predecessorNamespace)
+    +' AND ' + successorCollectionName + successorDelimiter + toWhere('b', {where: successorParams}, successorNamespace),
+    'CREATE (a)-[n:' + relationshipType + relationshipParams + ']-&gt;(b)',
+    'RETURN n'
+  ];
+
+  params = {};
+  _.each(predecessorParams, function(value, key) {
+    key = predecessorNamespace + '_' + key;
+    params[key] = value;
+  });
+  _.each(successorParams, function(value, key) {
+    key = successorNamespace + '_' + key;
+    params[key] = value;
+  });
+
+  query(connection, collection, q, params, cb, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-neo4j.query" id="apidoc.element.sails-neo4j.query">
+        function <span class="apidocSignatureSpan">sails-neo4j.</span>query
+        <span class="apidocSignatureSpan">(connection, collection, q, params, cb, unique)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function query(connection, collection, q, params, cb, unique) {
+  connections[connection].graph(function(gr) {
+    gr.query(q.join('\n'), params, function (err, results) {
+      if (connectionSettings.debug) console.log(q.join('\n'), results);
+      if (err) {
+        cb(err, null);
+      }
+      else {
+        // this breaks our stuff, commenting out for now until further discussion with woody
+        // for(i=0; i&lt;results.length;i++)
+        // {
+        //   data = _.clone(results[i].data);
+        //   id = _.pick(results[i], 'id');
+        //   id.id = parseInt(id.id);
+        //   results[i] = _.extend(id, data);
+        // }
+        // if (unique) cb(null, results[0]);
+        // else
+        cb(null, results);
+      }
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-neo4j.registerConnection" id="apidoc.element.sails-neo4j.registerConnection">
+        function <span class="apidocSignatureSpan">sails-neo4j.</span>registerConnection
+        <span class="apidocSignatureSpan">(connection, collection, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function registerConnection(connection, collection, cb) {
+    if(!connection.identity) return cb(new Error('Connection is missing an identity.'));
+    if(connections[connection.identity]) return cb(new Error('Connection is already registered.'));
+    connections[connection.identity] =  createConnection(connection);
+    cb();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-neo4j.sanitized" id="apidoc.element.sails-neo4j.sanitized">
+        function <span class="apidocSignatureSpan">sails-neo4j.</span>sanitized
+        <span class="apidocSignatureSpan">(connection, collection, params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function sanitized(connection, collection, params) {
+    var i, truth = true;
+    for (i in params) {
+        if (params.hasOwnProperty(i) &amp;&amp; truth) {
+            if (typeof params[i] === 'object') {
+                truth = sanitized(connection, collection, params[i]);
+            }
+            else {
+                if(hasCypher(String(params[i]).toLowerCase())) {
+                    truth = false;
+                }
+            }
+        }
+        else {
+            break;
+        }
+    }
+    return truth;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-neo4j.stream" id="apidoc.element.sails-neo4j.stream">
+        function <span class="apidocSignatureSpan">sails-neo4j.</span>stream
+        <span class="apidocSignatureSpan">(connection, collection, options, stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stream = function (connection, collection, options, stream) {
+  // options is a standard criteria/options object (like in find)
+
+  // stream.write() and stream.end() should be called.
+  // for an example, check out:
+  // https://github.com/balderdashy/sails-dirty/blob/master/DirtyAdapter.js#L247
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-neo4j.update" id="apidoc.element.sails-neo4j.update">
+        function <span class="apidocSignatureSpan">sails-neo4j.</span>update
+        <span class="apidocSignatureSpan">(connection, collection, params, values, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">update = function (connection, collection, params, values, cb) {
+
+  var q, delimiter = '';
+
+  if (collection === null) { collection = ''; } // do we have a label?
+  else { collection = 'n:' + collection; }
+
+  if (params.where &amp;&amp; collection) { delimiter = ' AND '; } // do we have a label and params?
+  q = [
+    'MATCH (n)',
+    'WHERE ' + collection + delimiter + toWhere('n', params),
+    'SET ' + andJoin('n', _.omit(values, 'id'), ','),
+    'RETURN n'
+  ];
+
+  params.where = _.extend(params.where, values);
+
+  query(connection, collection, q, params.where, cb, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sails-neo4j.connection" id="apidoc.module.sails-neo4j.connection">module sails-neo4j.connection</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sails-neo4j.connection.connect" id="apidoc.element.sails-neo4j.connection.connect">
+        function <span class="apidocSignatureSpan">sails-neo4j.connection.</span>connect
+        <span class="apidocSignatureSpan">(connection)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function connect(connection) {
+  if (!graph) {
+    var path = connection.protocol + connection.host + ':' + connection.port + connection.base;
+    graph = true;
+    neo4j.connect(path, function(err, graph) {
+      if (err) {
+        console.log('An error has occured when trying to connect to Neo4j:');
+        d.reject(err);
+        throw err;
+      }
+      d.resolve(graph);
+    });
+  }
+  return d.promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+module.exports = (function() {
+var graph = false, d = Q.defer(); // if an active connection exists, use it instead of tearing the previous one down
+
+function connect(connection) {
+  if (!graph) {
+    var path = connection.protocol + connection.host + ':' + connection.port + connection.base;
+    graph = true;
+    neo4j.<span class="apidocCodeKeywordSpan">connect</span>(path, function(err, graph) {
+      if (err) {
+        console.log('An error has occured when trying to connect to Neo4j:');
+        d.reject(err);
+        throw err;
+      }
+      d.resolve(graph);
+    });
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sails-neo4j.connection.graph" id="apidoc.element.sails-neo4j.connection.graph">
+        function <span class="apidocSignatureSpan">sails-neo4j.connection.</span>graph
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function graphDo(cb) {
+  d.promise.then(cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sails-neo4j.security" id="apidoc.module.sails-neo4j.security">module sails-neo4j.security</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sails-neo4j.security.sanitized" id="apidoc.element.sails-neo4j.security.sanitized">
+        function <span class="apidocSignatureSpan">sails-neo4j.security.</span>sanitized
+        <span class="apidocSignatureSpan">(connection, collection, params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function sanitized(connection, collection, params) {
+    var i, truth = true;
+    for (i in params) {
+        if (params.hasOwnProperty(i) &amp;&amp; truth) {
+            if (typeof params[i] === 'object') {
+                truth = sanitized(connection, collection, params[i]);
+            }
+            else {
+                if(hasCypher(String(params[i]).toLowerCase())) {
+                    truth = false;
+                }
+            }
+        }
+        else {
+            break;
+        }
+    }
+    return truth;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
